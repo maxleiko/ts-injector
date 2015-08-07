@@ -1,0 +1,36 @@
+{
+  "name": "kevoree-injector",
+  "version": "1.0.0",
+  "description": "Kevoree Dependency Injection",
+  "main": "build/main/Injector.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "kevoree",
+    "di",
+    "dependency",
+    "injector",
+    "injection",
+    "@Inject"
+  ],
+  "author": "Maxime Tricoire <max.tricoire@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "reflect-metadata": "^0.1.0"
+  },
+  "typescript": {
+    "definitions": [
+      "node_modules/reflect-metadata/reflect-metadata.d.ts"
+    ]
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxleiko/injector.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maxleiko/injector/issues"
+  },
+  "homepage": "https://github.com/maxleiko/injector#readme"
+}
