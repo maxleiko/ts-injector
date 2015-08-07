@@ -51,3 +51,16 @@ injector.inject(c);
 c.doFoo();
 // prints "foo bar"
 ```
+
+### Dev env
+Init the project:
+```sh
+npm install && tsd install
+```
+
+Then open the project in [Atom](https://atom.io/) with [Atom TypeScript](https://atom.io/packages/atom-typescript) installed and press **F6**  
+You can now run the tests:
+
+```sh
+node build/test/test-injector.js
+```
