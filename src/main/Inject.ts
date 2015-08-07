@@ -11,14 +11,14 @@ export function Inject(className: string) {
       Reflect.defineMetadata(MetaData.INJECTS, services, target);
     }
     services.push({
-      name:  propertyKey,
+      name:      propertyKey,
       className: className
     });
   }
 }
 
-export enum MetaData {
-  INJECTS
+export class MetaData {
+  static INJECTS: string = 'ts-injector:injects'
 }
 
 export interface InjectData {

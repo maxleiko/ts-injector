@@ -21,6 +21,8 @@
     "files": [
         "./src/main/Inject.ts",
         "./src/main/Injector.ts",
+        "./src/main/ts-injector.d.ts",
+        "./src/main/ts-injector.ts",
         "./src/test/test-inject.ts",
         "./src/test/test-injector.ts",
         "./typings/node/node.d.ts",

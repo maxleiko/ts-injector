@@ -2,7 +2,7 @@
   "name": "ts-injector",
   "version": "1.0.0",
   "description": "Kevoree Dependency Injection",
-  "main": "build/main/Injector.js",
+  "main": "build/main/ts-injector.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -12,8 +12,7 @@ export class Injector {
   }
 
   inject(instance: any, context?: Context): void {
-    var services = Reflect.getMetadata(MetaData.INJECTS, instance.constructor.prototype);
-
+    var services = Reflect.getMetadata(MetaData.INJECTS, instance.constructor.prototype) || [];
     services.forEach((prop: InjectData) => {
       var service: Object = null;
       if (context) {
