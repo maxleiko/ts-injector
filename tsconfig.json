@@ -15,7 +15,7 @@
     },
     "filesGlob": [
         "./src/**/*.ts",
-        "./typings/**/*.ts",
+        "./typings/**/*.d.ts",
         "!./node_modules/**/*"
     ],
     "files": [

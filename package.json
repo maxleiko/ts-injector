@@ -1,5 +1,5 @@
 {
-  "name": "kevoree-injector",
+  "name": "ts-injector",
   "version": "1.0.0",
   "description": "Kevoree Dependency Injection",
   "main": "build/main/Injector.js",
@@ -27,10 +27,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maxleiko/injector.git"
+    "url": "git+https://github.com/maxleiko/ts-injector.git"
   },
   "bugs": {
-    "url": "https://github.com/maxleiko/injector/issues"
+    "url": "https://github.com/maxleiko/ts-injector/issues"
   },
-  "homepage": "https://github.com/maxleiko/injector#readme"
+  "homepage": "https://github.com/maxleiko/ts-injector#readme"
 }
