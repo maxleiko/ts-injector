@@ -1,27 +1,15 @@
-import { Inject } from '../main/Inject'
-
-// definition of service to inject
-declare interface Foo {
-  bar(): void
-}
-
-// definition of service to inject
-declare interface Logger {
-  log(msg: string): void
-}
+import { Inject, Injectable } from '../main/Inject'
+import * as Services from './test-injectable';
 
 export class MyClass {
-  @Inject('Foo')
-  private foo: Foo
+  @Inject(Services.SomeServiceImpl)
+  private one: Services.SomeService;
 
-  @Inject('Logger')
-  private log: Logger
+  @Inject(Services.OtherServiceImpl)
+  private two: Services.OtherService;
 
-  doFoo(): void {
-    this.foo.bar();
-  }
-
-  doLog(msg: string): void {
-    this.log.log(msg);
+  run(): void {
+      this.one.foo();
+      this.two.bar();
   }
 }

@@ -27,7 +27,7 @@ build/Release
 node_modules
 
 # JavaScript generated sources (from TypeScript)
-build
+built
 
 # Definitly Typed TypeScript declarations
 typings

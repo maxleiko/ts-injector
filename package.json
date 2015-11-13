@@ -2,29 +2,24 @@
   "name": "ts-injector",
   "version": "1.0.0",
   "description": "Kevoree Dependency Injection",
-  "main": "build/main/ts-injector.js",
+  "main": "built/main/ts-injector.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "typings": "built/main/ts-injector.d.ts",
   "keywords": [
-    "kevoree",
+    "annotation",
     "di",
     "dependency",
     "injector",
     "injection",
-    "@Inject"
+    "Inject"
   ],
   "author": "Maxime Tricoire <max.tricoire@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "reflect-metadata": "^0.1.0"
   },
-  "typescript": {
-    "definitions": [
-      "node_modules/reflect-metadata/reflect-metadata.d.ts"
-    ]
-  },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/maxleiko/ts-injector.git"

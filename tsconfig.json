@@ -1,31 +1,29 @@
 {
-    "version": "1.5.3",
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
+        "moduleResolution": "node",
         "isolatedModules": false,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "noImplicitAny": true,
+        "declaration": true,
         "removeComments": true,
         "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
-        "outDir": "build"
+        "outDir": "built"
     },
     "filesGlob": [
-        "./src/**/*.ts",
-        "./typings/**/*.d.ts",
-        "!./node_modules/**/*"
+        "src/**/*.ts"
     ],
     "files": [
-        "./src/main/Inject.ts",
-        "./src/main/Injector.ts",
-        "./src/main/ts-injector.d.ts",
-        "./src/main/ts-injector.ts",
-        "./src/test/test-inject.ts",
-        "./src/test/test-injector.ts",
-        "./typings/node/node.d.ts",
-        "./typings/tsd.d.ts"
+        "src/main/Inject.ts",
+        "src/main/Injector.ts",
+        "src/main/ts-injector.ts",
+        "src/test/SomeService.ts",
+        "src/test/test-inject.ts",
+        "src/test/test-injectable.ts",
+        "src/test/test-injector.ts"
     ]
 }

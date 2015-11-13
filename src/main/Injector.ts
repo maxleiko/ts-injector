@@ -1,4 +1,4 @@
-import { MetaData, InjectData } from './Inject';
+import { Injectable, MetaData, InjectData } from './Inject';
 
 export class Injector {
   private types: { [className: string]: Object };
@@ -7,8 +7,8 @@ export class Injector {
     this.types = {};
   }
 
-  register(className: string, instance: Object): void {
-    this.types[className] = instance;
+  register(injectable: Injectable, instance: Object): void {
+    this.types[injectable.name] = instance;
   }
 
   inject(instance: any, context?: Context): void {
@@ -16,23 +16,23 @@ export class Injector {
     services.forEach((prop: InjectData) => {
       var service: Object = null;
       if (context) {
-        service = context.get(prop.className);
+        service = context.get(prop.type);
         if (service) {
           instance[prop.name] = service;
         } else {
-          service = this.types[prop.className];
+          service = this.types[prop.type['name']];
           if (service) {
             instance[prop.name] = service;
           } else {
-            throw new Error(`Unable to find service "${prop.className}" for "${prop.name}" (${instance.constructor.name})`);
+            throw new Error(`Unable to find service "${prop.type['name']}" for "${prop.name}" (${instance.constructor.name})`);
           }
         }
       } else {
-        service = this.types[prop.className];
+        service = this.types[prop.type['name']];
         if (service) {
           instance[prop.name] = service;
         } else {
-          throw new Error(`Unable to find service "${prop.className}" for "${prop.name}" (${instance.constructor.name}) in global context`);
+          throw new Error(`Unable to find service "${prop.type['name']}" for "${prop.name}" (${instance.constructor.name}) in global context`);
         }
       }
     });
@@ -46,11 +46,11 @@ export class Context {
     this.types = {};
   }
 
-  register(className: string, instance: Object): void {
-    this.types[className] = instance;
+  register(injectable: Injectable, instance: Object): void {
+    this.types[injectable.name] = instance;
   }
 
-  get(className: string): Object {
-    return this.types[className];
+  get(injectable: Injectable): Object {
+    return this.types[injectable.name];
   }
 }
