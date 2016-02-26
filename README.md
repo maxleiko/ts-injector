@@ -1,23 +1,23 @@
 # injector
-TypeScript Dependency Injector using `reflect-metadata` and **tsc** 1.5+ with es7 experimental features enabled
+TypeScript Dependency Injection using `reflect-metadata` and **typescript** 1.7+ with es7 experimental features enabled
 
-### Purpose
+### How it works
 The purpose of this module is to allow you to do something like that:
 
 ```ts
 // MyClass.ts
-import { Inject } from 'ts-injector'
+import { Inject } from 'ts-injector';
 
 export class MyClass {
   @Inject('Foo')
-  private foo: Foo
+  private foo: Foo;
 
   doFoo(): void {
     this.foo.foo();
   }
 }
 
-// with a Foo declaration somewhere
+// Foo.ts
 declare interface Foo {
   foo(): void;
 }
@@ -27,11 +27,12 @@ And then create the instance of **MyClass** and inject the instance of **Foo** a
 
 ```ts
 // test.ts
-import { Injector } from 'ts-injector'
-import { MyClass } from './MyClass'
+import { Injector } from 'ts-injector';
+import { MyClass } from './MyClass';
+import { Foo } from './Foo';
 
 // create the real Foo class
-class Foo {
+class FooImpl implements Foo {
   foo(): void {
     console.log('foo bar');
   }
@@ -39,10 +40,10 @@ class Foo {
 
 // instantiate the injector
 var injector = new Injector();
-// register a new instance for "Foo" type
-injector.register('Foo', new Foo());
+// register an instance of FooImpl to be bind with people asking for @Inject("Foo")
+injector.register('Foo', new FooImpl());
 
-// create a instance of MyClass
+// create an instance of MyClass
 var c = new MyClass();
 // inject the needed dependencies
 injector.inject(c);
@@ -55,12 +56,13 @@ c.doFoo();
 ### Dev env
 Init the project:
 ```sh
-npm install && tsd install
+npm install
 ```
-
-Then open the project in [Atom](https://atom.io/) with [Atom TypeScript](https://atom.io/packages/atom-typescript) installed and press **F6**  
-You can now run the tests:
-
+Compile TypeScript:
 ```sh
-node build/test/test-injector.js
+npm run build
+```
+Run the tests
+```sh
+npm test
 ```

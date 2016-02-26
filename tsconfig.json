@@ -21,9 +21,11 @@
         "src/main/Inject.ts",
         "src/main/Injector.ts",
         "src/main/ts-injector.ts",
-        "src/test/SomeService.ts",
         "src/test/test-inject.ts",
         "src/test/test-injectable.ts",
         "src/test/test-injector.ts"
-    ]
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
 }

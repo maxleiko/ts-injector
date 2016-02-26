@@ -4,7 +4,8 @@
   "description": "Kevoree Dependency Injection",
   "main": "built/main/ts-injector.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "node built/test/test-injector"
   },
   "typings": "built/main/ts-injector.d.ts",
   "keywords": [
@@ -18,7 +19,7 @@
   "author": "Maxime Tricoire <max.tricoire@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "reflect-metadata": "^0.1.0"
+    "reflect-metadata": "^0.1.3"
   },
   "repository": {
     "type": "git",
